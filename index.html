@@ -629,6 +629,147 @@
     </div>
   </section>
 
+  <!-- FAQ Section -->
+<section id="faq" style="padding: 60px 20px; background-color: #faf6f0;">
+  <div style="max-width: 900px; margin: auto;">
+    <h2 style="text-align:center; font-size:2.2rem; margin-bottom:40px; color:#c0392b;">
+      Frequently Asked Questions 🙏
+    </h2>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>When does Ganesh Utsav start at Aadarsh Mandal?</span>
+        <span class="faq-icon">➕</span>
+      </button>
+      <div class="faq-answer">
+        <p>Ganesh Utsav at Aadarsh Mandal begins every year on <b>Ganesh Chaturthi</b> and continues for the full celebration period with daily aartis and devotional programs.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Do you celebrate Navratri also?</span>
+        <span class="faq-icon">➕</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes 🙏 Along with Ganesh Utsav, we also celebrate <b>Navdurga Utsav (Navratri)</b> every year with daily aartis and devotional activities dedicated to Goddess Durga.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Where can I see photos and videos?</span>
+        <span class="faq-icon">➕</span>
+      </button>
+      <div class="faq-answer">
+        <p>You can view our <b>photo gallery</b> and <b>video section</b> on this website. We also regularly update our <b>Instagram</b> and <b>YouTube</b> with new celebrations.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>How can I stay updated with the mandal?</span>
+        <span class="faq-icon">➕</span>
+      </button>
+      <div class="faq-answer">
+        <p>Follow our official <b>Instagram</b>, <b>YouTube channel</b>, and <b>WhatsApp channel</b> for the latest updates and celebrations.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .faq-item {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  }
+
+  .faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 18px;
+    font-size: 1.1rem;
+    border: none;
+    background: #c0392b;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+  }
+
+  .faq-question:hover {
+    background: #e74c3c;
+  }
+
+  .faq-icon {
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 18px;
+    background: #fff8f4;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+  }
+
+  .faq-answer p {
+    margin: 15px 0;
+    color: #444;
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 300px;
+    padding: 15px 18px;
+  }
+
+  .faq-item.active .faq-icon {
+    content: "➖";
+    transform: rotate(180deg);
+  }
+
+  /* Responsive */
+  @media screen and (max-width: 600px) {
+    .faq-question {
+      font-size: 1rem;
+      padding: 15px;
+    }
+    .faq-answer p {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+<script>
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const button = item.querySelector('.faq-question');
+    const icon = item.querySelector('.faq-icon');
+
+    button.addEventListener('click', () => {
+      // Close others
+      faqItems.forEach(i => {
+        if (i !== item) {
+          i.classList.remove('active');
+          i.querySelector('.faq-icon').textContent = "➕";
+        }
+      });
+
+      // Toggle current
+      item.classList.toggle('active');
+      icon.textContent = item.classList.contains('active') ? "➖" : "➕";
+    });
+  });
+</script>
+
   <footer class="bg-white py-6 mt-8 border-t">
     <div class="max-w-6xl mx-auto px-4 text-center text-sm text-gray-600">© <span id="yr"></span> Aadarsh Ganesh & Navdurga Mandal, Anturli <br> Website Designed & Licensed by Mayur Palwe • All Rights Reserved</div>
   </footer>
