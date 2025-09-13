@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aadarsh Ganesh & Navdurga Mandal — Anturli</title>
+  <meta name="description" content="Official site of Aadarsh Ganesh Mandal & Aadarsh Navdurga Mandal, Anturli" />
+  <link rel="icon" href="agmlogo.jpg" />
+
+  <!-- Continuous Running Header -->
+<header style="background-color:#ffcc80; padding:10px 0; overflow:hidden; font-family:Arial, sans-serif; display:flex; align-items:center;">
+
+  <!-- Logo -->
+  <div style="flex:0 0 auto; margin-left:20px;">
+    <img src="agmlogo.jpg" alt="Aadarsh Mandal Logo" style="height:50px;">
+  </div>
+
+  <!-- Running Text -->
+  <div style="flex:1; overflow:hidden; white-space:nowrap; margin-left:20px;">
+    <div class="scroll-text" style="display:inline-block; padding-left:100%; animation: scroll-left 20s linear infinite; font-size:18px; color:#333;">
+      🌸 Welcome to the Official Website of Aadarsh Ganesh Mandal & Aadarsh Navdurga Mandal, Anturli 🌸
+    </div>
+  </div>
+
+</header>
+
+<!-- Scroll Animation -->
+<style>
+  @keyframes scroll-left {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* Optional: Responsive font size */
+  @media (max-width:768px){
+    .scroll-text { font-size:16px; }
+  }
+</style>
+
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { saffron: {500: '#E6891B', 600:'#B45309'}, gold: '#E0B043' },
+          fontFamily: { display:['ui-serif','Georgia'], body:['Inter','system-ui'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    .floating { animation: float 6s ease-in-out infinite }
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+  </style>
+</head>
+<body class="bg-saffron-50 font-body text-gray-900">
+  <!-- Top bar -->
+  <div class="bg-saffron-600 text-white text-sm py-2 px-4"></div>
+
+  <!-- NAV -->
+  <header class="bg-white shadow sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <!-- HERO LOGO: Replace the image below with your logo at images/logo.png -->
+        <div class="h-12 w-12 rounded-lg bg-saffron-500 grid place-content-center text-white font-bold"><img src="agmlogo.jpg" alt="Aadarsh Mandal Logo">
+        </div>
+        <div>
+          <div class="text-xs text-gray-600">Official Website</div>
+          <div class="font-semibold">Aadarsh Ganesh Mandal & Aadarsh Navdurga Mandal</div>
+        </div>
+      </div>
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#ganesh">Ganesh</a>
+        <a href="#navratri">Navratri</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#committee">Committee</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="mobileBtn" class="md:hidden">Menu</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="py-12">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h1 class="text-3xl md:text-4xl font-bold">Aadarsh Ganesh Mandal & Aadarsh Navdurga Mandal, Anturli</h1>
+        <p class="mt-4 text-gray-700">Join us for Ganesh Utsav & Navratri — devotion, culture, and community service.</p>
+        <div class="mt-6 flex gap-3">
+          <a href="#events" class="px-4 py-2 rounded bg-saffron-600 text-white">Events</a>
+          <a href="#gallery" class="px-4 py-2 rounded border">Gallery</a>
+        </div>
+      </div>
+      <div>
+        <!-- HERO IMAGE: Replace this with your hero image at images/hero.jpg -->
+        <div class="rounded-2xl overflow-hidden border shadow-lg">
+          <img src="1000171987.jpg" alt="Aadarsh Mandal" class="w-full h-72 object-cover">
+        </div>
+        <p class="text-xs text-gray-600 mt-2">The guiding force and dedicated team behind Aadarsh Mandal.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-10 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl font-semibold">About Us</h2>
+      <p class="mt-3 text-gray-700">Aadarsh Ganesh & Navdurga Mandal, Anturli — Established 1993
+
+        Our journey began in 1993, when a few enthusiastic youths of Anturli decided to bring home a small Ganesh murti with great devotion but limited resources. What started as a humble celebration with a simple idol, homemade decorations, and heartfelt prayers slowly grew year by year into a grand festival that unites our entire community.
+        
+        As the years passed, the size of the murti grew, the decorations became more creative, and the participation of devotees increased. Soon, our Mandal also began celebrating Navratri Utsav, bringing together families and youngsters for Garba, Dandiya, and cultural events that became the heartbeat of our village evenings.
+        
+        Today, Aadarsh Ganesh Mandal & Aadarsh Navdurga Mandal is not only known for devotion and celebration but also for its social work, cultural programs, and community service. From a small murti in 1993 to a grand and divine celebration today, our Mandal is a living example of how faith, unity, and tradition can grow stronger with every generation.</p>
+    </div>
+  </section>
+
+  <!-- GANESH -->
+  <section id="ganesh" class="py-10">
+    <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-6">
+      <div>
+        <h3 class="text-xl font-semibold">Ganesh Utsav</h3>
+        <p class="mt-2 text-gray-700">Daily aarti timings and program details : Concluded for this year</p>
+      </div>
+      <div>
+        <!-- REPLACE VIDEO THUMBNAIL: If you have a YouTube livestream change the iframe src to your video id -->
+        <div class="aspect-video bg-black">
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Live" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NAVRATRI -->
+  <section id="navratri" class="py-10 bg-white">
+    <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-6">
+      <div>
+        <h3 class="text-xl font-semibold">Navratri Utsav</h3>
+        <p class="mt-2 text-gray-700">Garba timings and special nights : <br> Aarti: 7:30 PM – 8:00 PM <br>
+
+          Garba: 8:30 PM – 10:30 PM</p>
+      </div>
+      <div>
+        <div class="aspect-video bg-black">
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Navratri" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY: Replace all src values with your images inside images/ folder -->
+  <section id="gallery" class="py-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-semibold">Gallery</h2>
+      <p class="text-xs text-gray-600 mt-1"></p>
+
+      <div class="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <!-- Example image card: change src to images/ganesh1.jpg etc. -->
+        <div class="overflow-hidden rounded-lg bg-white border">
+          <img src="deity.jpg" alt="Ganesh 1" class="w-full h-44 object-cover">
+        </div>
+
+        <div class="overflow-hidden rounded-lg bg-white border">
+          <img src="gallery2.jpg" alt="Ganesh 2" class="w-full h-44 object-cover">
+        </div>
+
+        <div class="overflow-hidden rounded-lg bg-white border">
+          <img src="gallary3.jpg" alt="Navratri 1" class="w-full h-44 object-cover">
+        </div>
+
+        <div class="overflow-hidden rounded-lg bg-white border">
+          <img src="navratri1.jpg" alt="Navratri 2" class="w-full h-44 object-cover">
+        </div>
+
+        <div class="overflow-hidden rounded-lg bg-white border">
+          <img src="navratri2.jpg" alt="Social Work 1" class="w-full h-44 object-cover">
+        </div>
+
+        <div class="overflow-hidden rounded-lg bg-white border">
+          <img src="navratri3.jpg" alt="Social Work 2" class="w-full h-44 object-cover">
+        </div>
+
+        <!-- Add more cards by copying this block and changing the filename -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMMITTEE -->
+<section id="committee" class="py-10 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-2xl font-semibold">Committee 2025</h2>
+    <p class="text-xs text-gray-600 mt-1"></p>
+
+    <!-- Grid of members -->
+    <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+      
+      <!-- Member card -->
+      <div class="text-center">
+        <img src="mayur.jpg" alt="President" class="w-28 h-28 mx-auto rounded-full object-cover border shadow">
+        <div class="mt-2 font-medium">Mayur Palwe</div>
+        <div class="text-sm text-gray-600">Web & Media Coordinator • Member</div>
+      </div>
+
+      <div class="text-center">
+        <img src="pavan_jiri.jpg" alt="President" class="w-28 h-28 mx-auto rounded-full object-cover border shadow">
+        <div class="mt-2 font-medium">Pawan Jirimali</div>
+        <div class="text-sm text-gray-600">President</div>
+      </div>
+
+      <div class="text-center">
+        <img src="varade158.jpg" alt="Vice President" class="w-28 h-28 mx-auto rounded-full object-cover border shadow">
+        <div class="mt-2 font-medium">Shubham Varade</div>
+        <div class="text-sm text-gray-600">Vice President</div>
+      </div>
+
+      <div class="text-center">
+        <img src="panu_2026.jpg" alt="Secretary" class="w-28 h-28 mx-auto rounded-full object-cover border shadow">
+        <div class="mt-2 font-medium">Pranav Mahajan</div>
+        <div class="text-sm text-gray-600">Secretary</div>
+      </div>
+
+      <div class="text-center">
+        <img src="paju_24_10.jpg" alt="Treasurer" class="w-28 h-28 mx-auto rounded-full object-cover border shadow">
+        <div class="mt-2 font-medium">Prajwal Mahajan</div>
+        <div class="text-sm text-gray-600">Treasurer</div>
+      </div>
+
+      <div class="text-center">
+        <img src="satyam1805.jpg" alt="Member 1" class="w-28 h-28 mx-auto rounded-full object-cover border shadow">
+        <div class="mt-2 font-medium">Satyam Mahajan</div>
+        <div class="text-sm text-gray-600">Member</div>
+      </div>
+
+      <div class="text-center">
+        <img src="its_bhushan.19.jpg" alt="Member 2" class="w-28 h-28 mx-auto rounded-full object-cover border shadow">
+        <div class="mt-2 font-medium">Bhushan Palwe</div>
+        <div class="text-sm text-gray-600">Member</div>
+      </div>
+
+      <div class="text-center">
+        <img src="brand_mali.jpg" alt="Member 3" class="w-28 h-28 mx-auto rounded-full object-cover border shadow">
+        <div class="mt-2 font-medium">Gaurav Jirimali</div>
+        <div class="text-sm text-gray-600">Member</div>
+      </div>
+
+      <div class="text-center">
+        <img src="darshan_g_777.jpg" alt="Member 4" class="w-28 h-28 mx-auto rounded-full object-cover border shadow">
+        <div class="mt-2 font-medium">Darshan Mahajan</div>
+        <div class="text-sm text-gray-600">Member</div>
+      </div>
+
+      <div class="text-center">
+        <img src="kuna_lmahajan19.jpg" alt="Member 5" class="w-28 h-28 mx-auto rounded-full object-cover border shadow">
+        <div class="mt-2 font-medium">Kunal Mahajan</div>
+        <div class="text-sm text-gray-600">Member</div>
+      </div>
+
+      <div class="text-center">
+        <img src="designer_manthan.jpg" alt="Member 6" class="w-28 h-28 mx-auto rounded-full object-cover border shadow">
+        <div class="mt-2 font-medium">Manthan Borse</div>
+        <div class="text-sm text-gray-600">Video & Digital Media Manager • Member</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Announcement Section -->
+<section id="announcements" style="padding: 30px; background-color: #f8f8f8;">
+  <h2 style="text-align:center; color:#333;">📢 Announcements</h2>
+  <ul style="list-style: none; padding: 0; max-width: 600px; margin: 20px auto; font-size: 16px; color: #555;">
+    <li><strong>22/09/2025</strong> – Navratri Garba starts from 8:30 PM daily.</li>
+    <li><strong>22/09/2025</strong> – Navratri Aarti: 7:30 PM – 8:00 PM.</li>
+    <li><strong>27/08/2025</strong> – Ganesh Utsav Aarti has concluded for this year.</li>
+    <li><strong></strong> – Stay updated on upcoming events—follow us on our social media!</li>
+  </ul>
+</section>
+
+<!-- Modern Social Media Section -->
+<section id="social-media" style="padding:50px 20px; background: linear-gradient(135deg, #fff3e0, #ffe0b2); font-family:Arial, sans-serif; text-align:center;">
+  
+  <!-- Section Title -->
+  <h2 style="color:#333; font-size:32px; margin-bottom:15px;">🌐 Connect with Us</h2>
+  <p style="color:#555; font-size:18px; margin-bottom:30px;">
+    Follow us for live updates, festival highlights, and exclusive photos!
+  </p>
+
+  <!-- Social Media Icons -->
+  <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:25px;">
+    
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/aadarsh_nagar_anturli?igsh=dXd0YzRiNHF4d2F1" target="_blank" style="display:flex; align-items:center; gap:8px; padding:12px 18px; background:#E1306C; color:white; border-radius:8px; text-decoration:none; font-weight:bold; transition: transform 0.3s;">
+      <span style="font-size:20px;">📸</span> Instagram
+    </a>
+
+    <!-- YouTube -->
+    <a href="https://youtube.com/@aadarshnagaranturli?si=2tXaM_boBMbEKCXw" target="_blank" style="display:flex; align-items:center; gap:8px; padding:12px 18px; background:#FF0000; color:white; border-radius:8px; text-decoration:none; font-weight:bold; transition: transform 0.3s;">
+      <span style="font-size:20px;">▶️</span> YouTube
+    </a>
+
+    <!-- Email -->
+    <a href="mailto:contact.aadarshnagar@gmail.com" style="display:flex; align-items:center; gap:8px; padding:12px 18px; background:#555; color:white; border-radius:8px; text-decoration:none; font-weight:bold; transition: transform 0.3s;">
+      <span style="font-size:20px;">✉️</span> Email
+    </a>
+
+  </div>
+</section>
+
+<!-- Hover Effect Script (Optional) -->
+<style>
+  #social-media a:hover {
+    transform: scale(1.1);
+  }
+
+  /* Responsive: Stack icons on smaller screens */
+  @media (max-width:600px){
+    #social-media div {
+      flex-direction: column;
+      gap:15px;
+    }
+  }
+</style>
+
+</section>
+
+<style>
+  #donate-social a:hover {
+    transform: scale(1.05);
+  }
+
+  @media (max-width:768px){
+    #donate-social div {
+      flex-direction: column;
+      gap:15px;
+    }
+  }
+</style>
+
+</section>
+
+<!-- Hover Effect -->
+<style>
+  #donate a:hover {
+    transform: scale(1.05);
+  }
+
+  #donate div:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s;
+  }
+
+  @media (max-width:768px){
+    #donate div {
+      min-width:100%;
+    }
+  }
+</style>
+
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-10">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-6">
+      <div>
+        <h3 class="text-xl font-semibold">Contact</h3>
+        <p class="mt-2 text-gray-700">Address: Aadarsh Nagar, Anturli</p>
+        <p class="mt-1 text-gray-700">Email: contact.aadarshnagar@gmail.com</p>
+      </div>
+      <form onsubmit="event.preventDefault(); alert('Message sent (demo)'); this.reset();" class="p-4 bg-gray-50 rounded">
+        <label class="block text-sm">Name</label>
+        <input class="w-full rounded border px-3 py-2 mt-1" required />
+        <label class="block text-sm mt-3">Phone</label>
+        <input class="w-full rounded border px-3 py-2 mt-1" required />
+        <label class="block text-sm mt-3">Message</label>
+        <textarea class="w-full rounded border px-3 py-2 mt-1"></textarea>
+        <button class="mt-3 px-4 py-2 bg-saffron-600 text-white rounded">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="bg-white py-6 mt-8 border-t">
+    <div class="max-w-6xl mx-auto px-4 text-center text-sm text-gray-600">© <span id="yr"></span> Aadarsh Ganesh & Navdurga Mandal, Anturli <br> Website Designed & Licensed by Mayur Palwe • All Rights Reserved</div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    document.getElementById('mobileBtn').addEventListener('click', ()=> alert('Use the desktop layout to edit navigation (demo).'))
+  </script>
+</body>
+</html>
