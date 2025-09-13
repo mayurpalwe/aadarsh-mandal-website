@@ -84,6 +84,164 @@
     </div>
   </header>
 
+   <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadarsh Mandal</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+  
+      /* Slider Container */
+      .slider {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+  
+      .slides img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        z-index: 1;
+      }
+  
+      .slides img.active {
+        opacity: 1;
+        z-index: 2;
+      }
+  
+      /* Manual Navigation Dots */
+      .navigation-manual {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        z-index: 10;
+      }
+  
+      .manual-btn {
+        border: 2px solid white;
+        padding: 8px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.4s;
+        margin: 0 8px;
+        background: rgba(255,255,255,0.3);
+      }
+  
+      .manual-btn:hover,
+      .manual-btn.active {
+        background: white;
+      }
+  
+      /* Navigation Arrows */
+      .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        color: white;
+        background: rgba(0,0,0,0.4);
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 50%;
+        z-index: 10;
+        transition: 0.3s;
+      }
+  
+      .nav-btn:hover {
+        background: rgba(0,0,0,0.7);
+      }
+  
+      .prev {
+        left: 20px;
+      }
+  
+      .next {
+        right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+  
+    <!-- Slider Section -->
+    <div class="slider">
+      <div class="slides">
+        <img src="ganeshji.jpg" alt="Ganpati" class="active">
+        <img src="devimaa.jpg" alt="Navdurga">
+        <img src="dance.jpeg" alt="Celebration">
+      </div>
+  
+      <!-- Arrows -->
+      <button class="nav-btn prev" onclick="prevSlide()">&#10094;</button>
+      <button class="nav-btn next" onclick="nextSlide()">&#10095;</button>
+  
+      <!-- Manual Navigation Dots -->
+      <div class="navigation-manual">
+        <div class="manual-btn active" onclick="manualSlide(0)"></div>
+        <div class="manual-btn" onclick="manualSlide(1)"></div>
+        <div class="manual-btn" onclick="manualSlide(2)"></div>
+      </div>
+    </div>
+  
+    <script>
+      let index = 0;
+      const slides = document.querySelectorAll(".slides img");
+      const dots = document.querySelectorAll(".manual-btn");
+      const totalSlides = slides.length;
+  
+      let slideInterval = setInterval(nextSlide, 4000);
+  
+      function updateSlide() {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+      }
+  
+      function manualSlide(i) {
+        index = i;
+        updateSlide();
+        resetInterval();
+      }
+  
+      function nextSlide() {
+        index = (index + 1) % totalSlides;
+        updateSlide();
+      }
+  
+      function prevSlide() {
+        index = (index - 1 + totalSlides) % totalSlides;
+        updateSlide();
+        resetInterval();
+      }
+  
+      function resetInterval() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 4000);
+      }
+  
+      updateSlide();
+    </script>
+  
+  </body>
+  </html>  
+
   <!-- HERO -->
   <section id="home" class="py-12">
     <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
