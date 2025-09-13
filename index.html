@@ -153,42 +153,130 @@
   </section>
 
   <!-- GALLERY: Replace all src values with your images inside images/ folder -->
-  <section id="gallery" class="py-10">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl font-semibold">Gallery</h2>
-      <p class="text-xs text-gray-600 mt-1"></p>
+  <div class="max-w-6xl mx-auto px-4">
+  <h2 class="text-2xl font-semibold">Gallery</h2>
+  <p class="text-xs text-gray-600 mt-1">Click on any photo to view in full size</p>
 
-      <div class="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        <!-- Example image card: change src to images/ganesh1.jpg etc. -->
-        <div class="overflow-hidden rounded-lg bg-white border">
-          <img src="deity.jpg" alt="Ganesh 1" class="w-full h-44 object-cover">
-        </div>
-
-        <div class="overflow-hidden rounded-lg bg-white border">
-          <img src="gallery2.jpg" alt="Ganesh 2" class="w-full h-44 object-cover">
-        </div>
-
-        <div class="overflow-hidden rounded-lg bg-white border">
-          <img src="gallary3.jpg" alt="Navratri 1" class="w-full h-44 object-cover">
-        </div>
-
-        <div class="overflow-hidden rounded-lg bg-white border">
-          <img src="navratri1.jpg" alt="Navratri 2" class="w-full h-44 object-cover">
-        </div>
-
-        <div class="overflow-hidden rounded-lg bg-white border">
-          <img src="navratri2.jpg" alt="Social Work 1" class="w-full h-44 object-cover">
-        </div>
-
-        <div class="overflow-hidden rounded-lg bg-white border">
-          <img src="navratri3.jpg" alt="Social Work 2" class="w-full h-44 object-cover">
-        </div>
-
-        <!-- Add more cards by copying this block and changing the filename -->
-      </div>
-
+  <!-- Gallery Grid -->
+  <div class="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div class="overflow-hidden rounded-lg bg-white border cursor-pointer">
+      <img src="deity.jpg" alt="Ganesh 1" class="w-full h-44 object-cover gallery-img">
     </div>
-  </section>
+
+    <div class="overflow-hidden rounded-lg bg-white border cursor-pointer">
+      <img src="gallery2.jpg" alt="Ganesh 2" class="w-full h-44 object-cover gallery-img">
+    </div>
+
+    <div class="overflow-hidden rounded-lg bg-white border cursor-pointer">
+      <img src="gallary3.jpg" alt="Navratri 1" class="w-full h-44 object-cover gallery-img">
+    </div>
+
+    <div class="overflow-hidden rounded-lg bg-white border cursor-pointer">
+      <img src="navratri1.jpg" alt="Navratri 2" class="w-full h-44 object-cover gallery-img">
+    </div>
+
+    <div class="overflow-hidden rounded-lg bg-white border cursor-pointer">
+      <img src="navratri2.jpg" alt="Social Work 1" class="w-full h-44 object-cover gallery-img">
+    </div>
+
+    <div class="overflow-hidden rounded-lg bg-white border cursor-pointer">
+      <img src="navratri3.jpg" alt="Social Work 2" class="w-full h-44 object-cover gallery-img">
+    </div>
+
+    <!-- Extra Images -->
+    <div class="overflow-hidden rounded-lg bg-white border cursor-pointer">
+      <img src="ganesh4.jpg" alt="Ganesh 3" class="w-full h-44 object-cover gallery-img">
+    </div>
+
+    <div class="overflow-hidden rounded-lg bg-white border cursor-pointer">
+      <img src="ganesh5.jpg" alt="Ganesh 4" class="w-full h-44 object-cover gallery-img">
+    </div>
+
+    <div class="overflow-hidden rounded-lg bg-white border cursor-pointer">
+      <img src="navratri4.jpg" alt="Navratri 3" class="w-full h-44 object-cover gallery-img">
+    </div>
+
+    <div class="overflow-hidden rounded-lg bg-white border cursor-pointer">
+      <img src="social1.jpg" alt="Social Work 3" class="w-full h-44 object-cover gallery-img">
+    </div>
+  </div>
+</div>
+
+<!-- Modal for full image view -->
+<div id="imgModal" class="hidden fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
+  <span id="closeModal" class="absolute top-5 right-8 text-white text-4xl cursor-pointer">&times;</span>
+
+  <!-- Prev Button -->
+  <button id="prevBtn" class="absolute left-5 text-white text-5xl font-bold px-3 py-1 cursor-pointer">&#10094;</button>
+
+  <!-- Image -->
+  <img id="modalImg" class="max-w-4xl max-h-[90vh] rounded-lg shadow-lg">
+
+  <!-- Next Button -->
+  <button id="nextBtn" class="absolute right-5 text-white text-5xl font-bold px-3 py-1 cursor-pointer">&#10095;</button>
+</div>
+
+<script>
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImg");
+  const closeModal = document.getElementById("closeModal");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  const galleryImages = document.querySelectorAll(".gallery-img");
+  let currentIndex = 0;
+
+  // Open modal with clicked image
+  galleryImages.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      modal.classList.remove("hidden");
+      modalImg.src = img.src;
+      currentIndex = index;
+    });
+  });
+
+  // Close modal
+  closeModal.addEventListener("click", () => {
+    modal.classList.add("hidden");
+  });
+
+  // Close when clicking outside image
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.add("hidden");
+    }
+  });
+
+  // Next button
+  nextBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % galleryImages.length;
+    modalImg.src = galleryImages[currentIndex].src;
+  });
+
+  // Prev button
+  prevBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    modalImg.src = galleryImages[currentIndex].src;
+  });
+
+  // Keyboard navigation
+  document.addEventListener("keydown", (e) => {
+    if (!modal.classList.contains("hidden")) {
+      if (e.key === "ArrowRight") {
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        modalImg.src = galleryImages[currentIndex].src;
+      } else if (e.key === "ArrowLeft") {
+        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        modalImg.src = galleryImages[currentIndex].src;
+      } else if (e.key === "Escape") {
+        modal.classList.add("hidden");
+      }
+    }
+  });
+</script>
+
 
   <!-- COMMITTEE -->
 <section id="committee" class="py-10 bg-white">
